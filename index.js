@@ -26,6 +26,8 @@ async function getLunch() {
                     }
                 })
 
+                if(result.length === 0) throw Error('No lunch found')
+
                 resolve(result[0])
             })
         }).on('error', (err) => {
@@ -48,13 +50,15 @@ async function getDinner() {
                 const root = HTMLParser.parse(data)
 
                 const result = root.querySelectorAll('a').filter((a) => {
-                    return a.text.includes('Cena') || a.text.includes('cena')
+                    return a.text.includes('cena') || a.text.includes('Cena')
                 }).map((a) => {
                     return {
                         type: a.text,
                         link: a.getAttribute('href')
                     }
                 })
+
+                if(result.length === 0) throw Error('No dinner found')
                 
                 resolve(result[0])
             })
