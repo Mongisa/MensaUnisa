@@ -1,6 +1,6 @@
 {
   "name": "@mongisa/mensaunisa",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Progetto che permette di ottenere il menù del giorno della mensa UNISA (in formato pdf)",
   "main": "index.js",
   "scripts": {
